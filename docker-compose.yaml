@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+
+  node:
+    hostname:       ${NAME}-node
+    container_name: ${NAME}-node
+    # image: node
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    restart: always
+    ports: 
+      - ${NODE_PORT}:8080
